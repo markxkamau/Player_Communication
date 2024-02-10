@@ -5,11 +5,18 @@ package org.example;
 import java.io.*;
 import java.net.*;
 
-public class Initiator {
+public class Initiator extends Thread {
 
+    private int port = 0 ;
+    private String address = "";
     // Constructor to set the server address and port
     public Initiator(String address, int port) {
+        this.address = address;
+        this. port = port;
 
+    }
+    @Override
+    public void run(){
         try {
             // Create a socket connection to the server
             Socket socket = new Socket(address, port);
@@ -48,13 +55,7 @@ public class Initiator {
             // Handle any network-related errors
             System.out.println("Error occurred: " + e.getMessage());
         }
-
     }
 
-
-    public static void main(String[] args) {
-        // Start the client program
-        Initiator player1 = new Initiator("127.0.0.1", 5000);
-    }
 
 }

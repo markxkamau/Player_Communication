@@ -45,6 +45,13 @@ public class Main {
         }
 
         // Print a message indicating the loop has ended
-        System.out.println("Players have finished messaging!");
+        System.out.println("Players have finished messaging!\nFirst Program run successfully");
+
+        Initiator initiator = new Initiator("127.0.0.1", 5555);
+        Responder responder = new Responder(5555);
+
+        initiator.start();
+        responder.start();
+
     }
 }

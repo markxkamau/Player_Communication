@@ -5,10 +5,15 @@ package org.example;
 import java.net.*;
 import java.io.*;
 
-public class Responder  {
+public class Responder extends Thread{
 
+    private int port = 0;
     // Constructor to start the server on a specific port
     public Responder(int port) {
+        this.port = port;
+    }
+    @Override
+    public void run(){
         try {
             // Create a server socket to listen for connections on the specified port
             ServerSocket serverSocket = new ServerSocket(port);
@@ -55,9 +60,6 @@ public class Responder  {
         }
     }
 
-    public static void main(String[] args) {
-        // Start the server on port 5000 by default
-        Responder player2 = new Responder(5000);
-    }
+
 
 }
