@@ -54,6 +54,7 @@ public class Responder extends Thread{
             // Close the socket and reader
             socket.close();
             in.close();
+            serverSocket.close();
         } catch (IOException e) {
             // Handle any network-related errors
             System.out.println("Error occurred: " + e.getMessage());

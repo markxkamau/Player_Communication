@@ -51,6 +51,8 @@ public class Initiator extends Thread {
 
                 count++;
             }
+            socket.close();
+            reader.close();
         } catch (IOException e) {
             // Handle any network-related errors
             System.out.println("Error occurred: " + e.getMessage());
